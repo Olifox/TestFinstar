@@ -1,0 +1,1 @@
+select * from (select Id, Dt Sd, LEAD(Dt) OVER(PARTITION BY Id ORDER BY Id) Ed from Test1) as query where query.ed is not null;
